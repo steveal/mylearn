@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="shortcut icon" href="icons/favicon.ico"/>
+  <link rel="bookmark" href="icons/favicon.ico"/>
+  <link rel="stylesheet" href="css/mycss.css">
+
+  <meta charset="utf-8">
+  <title>标签页部件（Tabs Widget）演示</title>
+  <style>
+    .hnClass {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 36x;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+   font-weight: 500
+}
+  </style>
+  
+</head>
+<body>
+
+<p class="important"> important paragraphe</p>
+<p class="hnClass"> test the font 测试字体</p>
+<h1 class="hnClass"> test the font 测试字体</h1>
+<div id="tabs">
+  <ul>
+    <li><a href="#fragment-1"><span>一</span></a></li>
+    <li><a href="#fragment-2"><span>二</span></a></li>
+    <li><a href="#fragment-3"><span>三</span></a></li>
+  </ul>
+  <div id="fragment-1">
+    <p>第一个标签是默认激活的：</p>
+    <pre><code>$( "#tabs" ).tabs(); </code></pre>
+  </div>
+  <div id="fragment-2">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+  </div>
+  <div id="fragment-3">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+  </div>
+</div>
+<input type="text" name="date" id="date" />
+<div id="progressbar" attr="this is a attr"></div>
+
+   <link rel="stylesheet" href="js/jquery/jquery-ui.min.css">
+  <script src="js/jquery/jquery-2.1.0.min.js"></script>
+
+    <script src="js/jquery/jquery-ui.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+  <style>
+
+.almost-done {
+    background : red
+}
+</style>
+<script>
+new Date().getTime();
+$("#tabs").tabs();
+$("#date").datepicker();
+$(function() {
+    $("#progressbar").progressbar({
+        value: 83
+    })
+    
+    
+    //.addClass("almost-done");
+    console.log($("#progressbar").css("background"));
+    console.log($("#progressbar div").css("background"));
+    console.log($("#progressbar").attr("attr"));
+});
+</script>
+
+<script>
+
+var attr = [];
+// $.ajax({
+//     type: "post",
+//     async: false,
+//     //同步执行    
+//     url: "http://localhost:8080/fish-example/json.txt",
+//     data: {},
+//     dataType: "JSONP",
+//     //返回数据形式为json
+//     success: function(result) {
+//         if (result) {
+//             for (var i = 0; i < result.length; i++) {
+//                 console.log(result[i].name);
+//                 arr.push(result[i].name);
+//             }
+//         }
+    
+//     },
+//     error: function(errorMsg) {
+//         alert("不好意思，大爷，图表请求数据失败啦!");
+//         // myChart.hideLoading();
+//     }
+// })
+// htmlobj=$.ajax({url:"http://localhost:8080/fish-example/json.txt",async:false});
+//   attr = eval( "(" + htmlobj.responseText +")");
+  htmlobj=$.ajax({
+    dataType: "JSONP", 
+    url:"json.txt",
+    async:false}).always(function(){
+      console.log("XX");
+    });
+
+    // throw new Error("xxx")
+    alert("bootstrap alert")
+</script>
+
+
+</body>
+</html>

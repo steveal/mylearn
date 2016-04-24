@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title> new document </title>  
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>   
+
+<script type="text/javascript">  
+
+function writeInfo(){ 
+
+if(msg=confirm("是否确录入用户信息")){
+
+var names="_blank";
+
+var  name=prompt("请输入您的姓名","");
+
+var pwd=prompt("请输入您的密码","");
+
+if(name.length<5 ||name.length>16){
+
+ alert("姓名不符合要求，请重新输入");
+
+} else if(pwd.length <5 || pwd.length >16 ){
+
+ alert("密码长度不符合要求");
+
+}else{
+
+ alert("信息录入成功！");
+
+ window.location.href="http://www.52aixuexi.com";
+
+}
+
+  }else{
+
+   return false;
+
+ }
+
+}  
+
+</script> 
+
+</head> 
+
+<body> 
+
+<input type="button" value="点此录入用户信息" onClick="writeInfo()" /> 
+
+</body>
+
+</html>

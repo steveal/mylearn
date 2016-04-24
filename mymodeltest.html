@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "utf-8"/>
+<title>backbone-model</title>
+</head>
+<body>
+</body>
+
+
+  <script src="js/jquery/jquery.js"></script>
+  <script src="js/underscore.js"></script>
+  <script src="js/backbone.js"></script>
+  <script src="js/demo.js"></script>
+<script>
+(function ($) {
+    /**
+    *此处填充代码下面练习代码
+    **/
+
+    var Man = Backbone.Model.extend({
+    	url: "/test.html",
+    initialize: function(){
+        console.log('Hey, you create me!');
+        this.bind("change:name",function(){
+        	var name = this.get('name')
+        	console.log("你改变了name属性为：" + name)
+        })
+        this.bind("invalid",function(model,error){
+        	alert(erro);
+        }) 
+    },
+    defaults: {
+        name:'张三',
+        age: '38'
+    },
+    aboutMe: function(){
+        return '我叫' + this.get('name') + ',今年' + this.get('age') + '岁';
+    },
+    validate:function(object){
+    	if(object.name="") {
+    		return "Name should not be empty"
+    	}
+    }
+});
+
+var man = new Man
+console.log(man.get('name'))
+console.log(man.aboutMe())
+man.set({log:'the5fire'})  //触发绑定的change事件，alert。
+man.set({name:'the5fire.com'})  //触发绑定的change事件，alert。
+man.set({name:''})
+
+// man.save()
+ var man2 = new Man
+ man2.fetch({url:"json.txt",
+ 	success:function(model,response){
+        console.log('success');
+        //model为获取到的数据
+        console.log(response);
+        console.log(model.toJSON())
+        
+    },error:function(){
+        //当返回格式不正确或者是非json数据时，会执行此方法
+        console.log('error');
+    }})
+ console.log(man2)
+
+require(['media/'])
+})(jQuery);
+</script>
+</html>

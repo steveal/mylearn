@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="height:400px"></div>
+    
+    <div id="map" style="height:800px"></div>
+ <script type="text/javascript" src="js/jquery/jquery-2.1.0.min.js">
+</script>
+    <!-- ECharts单文件引入 -->
+    
+    <script src="js/echarts-2.2.7/build/dist/echarts.js">
+</script>
+    <script type="text/javascript">
+
+
+// 路径配置
+require.config({
+    paths: {
+        echarts: 'js/echarts-2.2.7/build/dist/'
+    }
+});
+
+// 使用
+require(
+[
+'echarts', 
+'echarts/chart/bar'// 使用柱状图就加载bar模块，按需加载
+], 
+function(ec) {
+    // 基于准备好的dom，初始化echarts图表
+    var myChart = ec.init(document.getElementById('main'));
+    var attrName = [];
+    var attrNum = [];
+    htmlobj = $.ajax({
+        //dataType: "JSONP",
+        url: "json.txt",
+        async: false
+    }).always(function() {
+        console.log("XX");
+    });
+    //console.log(htmlobj.responseText);
+    var jsonText = eval("(" + htmlobj.responseText + ")");
+    //console.log(jsonText[0].name)
+    for (var i = 0; i < jsonText.length; i++) {
+        attrName.push(jsonText[i].name)
+        attrNum.push(jsonText[i].num)
+    }
+    
+    
+    var option = {
+        tooltip: {
+            show: true
+        },
+        legend: {
+            data: ['销量']
+        },
+        xAxis: [
+        {
+            type: 'category',
+            data: attrName
+        
+        }
+        ],
+        yAxis: [
+        {
+            type: 'value'
+        }
+        ],
+        series: [
+        {
+            "name": "销量",
+            "type": "bar",
+            "data": attrNum
+        }
+        ]
+    };
+    
+    // 为echarts对象加载数据 
+    myChart.setOption(option);
+}
+);
+</script>
+    
+    <script type="text/javascript">
+
+
+// 路径配置
+require.config({
+    paths: {
+        echarts: 'js/echarts-2.2.7/build/dist/'
+    }
+});
+
+// 使用
+require(
+[
+'echarts', 
+'echarts/chart/map'
+], 
+function(ec) {
+    // 基于准备好的dom，初始化echarts图表
+    var myChart = ec.init(document.getElementById('map'));
+    
+    var option = {
+        tooltip: {
+            trigger: 'item',
+            formatter: '{b}'
+        },
+        series: [
+        {
+            name: '中国',
+            type: 'map',
+            mapType: 'china',
+            selectedMode: 'multiple',
+            itemStyle: {
+                normal: {
+                    label: {
+                        show: true
+                    }
+                },
+                emphasis: {
+                    label: {
+                        show: true
+                    }
+                }
+            },
+            data: [
+            {
+                name: '广东',
+                selected: true
+            }
+            ]
+        }
+        ]
+    };
+    var ecConfig = require('echarts/config');
+    myChart.on(ecConfig.EVENT.MAP_SELECTED, function(param) {
+        var selected = param.selected;
+        var str = '当前选择： ';
+        for (var p in selected) {
+            if (selected[p]) {
+                str += p + ' ';
+            }
+        }
+        document.getElementById('wrong-message').innerHTML = str;
+    })
+    
+    // 为echarts对象加载数据 
+    //myChart.setOption(option); 
+}
+);
+</script>
+    
+</body>

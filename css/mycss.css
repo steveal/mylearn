@@ -1,0 +1,18 @@
+p[csel*='port'] {
+	color : #FF0000;
+}
+
+p[csel~='warn'] {
+	color : #00FF00;
+}
+p[csel^='im'] {
+	font-size :30px
+}
+
+p[csel$='ant'] {
+	font-weight : 800;
+}
+
+p.important {
+	line-height: 1;
+}
