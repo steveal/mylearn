@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+	<p>http://www.w3schools.com/js/js_regexp.asp<p>
+    <p id="p">this is something and something</p>
+    <script src="../../js/jquery-2.2.2.js"></script>
+    <script>
+    $(function() {
+        var str = $('#p').text();
+        var reg = new RegExp('something','g')
+        var x= str.replace(reg, 'otherthing');
+        var y = str.replace(/something/g, 'otherthing')
+        // $("#p").text(str.replace(reg, "otherthing"));
+        $('#p').text(str.replace(/something/g, 'otherthing'));
+
+    });
+    </script>
+</body>
+
+</html>
