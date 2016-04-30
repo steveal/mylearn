@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>position example</title>
+    <style>
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    
+    body {
+    	margin-bottom :30px;
+
+    }
+
+    .footer {
+    	position :fixed;
+    	bottom :0px;
+    	border : solid 1px #666;
+    }
+    .container {
+        position: relative;
+        border: solid grey;
+    }
+    
+    .nav {
+        position: absolute;
+        width: 200px;
+        border: solid red;
+        left: 0px;
+    }
+    
+    .section {
+        margin-left: 200px;
+        border: solid #FDC72F;
+    }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav">
+			<ul>
+				<li>home</li>
+				<li>help</li>
+				<li>about</li>
+			</ul>
+
+        </div>
+        <div class="section">
+            section1
+        </div>
+        <div class="section">
+            section2
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla impedit assumenda itaque voluptatum architecto, doloremque sint magni. Vitae provident maiores obcaecati facere natus neque eveniet voluptate placeat. Voluptas reiciendis, debitis!
+        </div>
+    </div>
+    <div class="footer">
+    	this is footer
+    	如果你使用了一个固定定位的页眉或页脚，确保有足够的空间来显示它们！我在 body 上面加了 margin-bottom 。
+    </div>
+</body>
+
+</html>

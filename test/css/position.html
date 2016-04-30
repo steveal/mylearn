@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>position</title>
+    <style>
+    div {
+        margin: 10px;
+        border: solid;
+    }
+    
+    #main {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .static {
+        position: static;
+    }
+    
+    .relative1 {
+        position: relative;
+    }
+    
+    .relative2 {
+        position: relative;
+        top: -20px;
+        left: 20px;
+        background-color: white;
+        width: 500px;
+    }
+    
+    .fixed {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 200px;
+        background-color: white;
+    }
+    .relative {
+    	position : relative;
+    	width :600px;
+    	height : 400px;
+    }
+    .absolute {
+    	position: absolute;
+    	top :120px;
+    	right :0;
+    	width:300px;
+    	height : 200px;
+    }
+    .absolute2 {
+    	position: absolute;
+    	bottom :120px;
+    	right :0;
+    	width:300px;
+    	height : 200px;
+    }
+    </style>
+</head>
+
+<body>
+	<a href="http://zh.learnlayout.com/index.html">学习网站</a>
+    <div id="main">
+        <pre>
+			#main{
+				max-width:600px:
+				margin : 0 auto;
+			}
+		</pre>
+    </div>
+    <div class="static">
+        <pre>
+			.static {
+				position : static;
+			}
+			static 是默认值。任意 position: static; 的元素不会被特殊的定位。一个 static 元素表示它不会被“positioned”，一个 position 属性被设置为其他值的元素表示它会被“positioned”。
+		</pre>
+    </div>
+    <div class="relative1">
+        <pre>
+    	relative 表现的和static一样，除非你添加了一些额外的属性
+    	</pre>
+    </div>
+    <div class="relative2">
+        <pre>
+    	在一个相对定位（position属性的值为relative）的元素上设置 top 、 right 、 bottom 和 
+    	left 属性会使其偏离其正常位置。其他的元素则不会调整位置来弥补它偏离后剩下的空隙。	
+    	</pre>
+    </div>
+    <div class="fixed">
+    	this is fixed
+    </div>
+    
+    <div class="relative">
+    	这个元素是相对定位的。如果它是 position: static; ，那么它的绝对定位子元素会跳过它直接相对于body元素定位。
+    	<div class="absolute">
+    		这个元素是绝对定位的。它相对于它的父元素定位。
+    	</div>
+    </div>
+
+    <div class="absolute2">
+    		相对body absolute2
+   	</div>
+
+</body>
+
+</html>

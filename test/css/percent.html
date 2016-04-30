@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>percent</title>
+    <style>
+    article img {
+        float: right;
+        width: 30%;
+        max-width: 60%;
+        min-width: 30%;
+    }
+    
+    .container {
+        margin: 20px auto;
+        max-width: 600px;
+        border: solid blue 2px;
+    }
+    
+    .clearfix {
+        overflow: auto;
+    }
+    
+    nav {
+        float: left;
+        width: 25%;
+        border : solid blue;
+    }
+    
+    section {
+        margin-left: 25%;
+        border : solid red;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <article class="clearfix">
+            <img src="../../img/ilta.png" alt="img"> 你甚至还能同时使用 min-width 和 max-width 来限制图片的最大或最小宽度！
+        </article>
+    </div>
+    <div class="container">
+        <nav>
+            <ul>
+                <li>home</li>
+                <li>about</li>
+                <li>help</li>
+            </ul>
+        </nav>
+        <section>
+            当布局很窄时， nav 就会被挤扁。更糟糕的是，你不能在 nav 上使用 min-width 来修复这个问题，因为右边的那列是不会遵守它的。
+        </section>
+        <section>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+        </section>
+    </div>
+</body>
+
+</html>

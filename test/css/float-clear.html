@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>float clear</title>
+    <style>
+    * {
+        line-height: 1.5em;
+    }
+    
+    div{
+        border: 1px solid #bbb;
+    }
+    
+    section {
+        border: 1px solid  #ccc;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #eee;
+        font-family: Arial;
+        font-size: 1em;
+    }
+    
+    img {
+        float: right;
+        margin: 0 0 1m 1m;
+    }
+    
+    .box {
+        float: left;
+        width: 200px;
+        height: 30px;
+        margin: 1m;
+    }
+    
+    .after-box {
+        clear: left;
+    }
+
+    .clearfix {
+    	overflow :auto;
+    }
+    .clearboth {
+    	clear :both;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        
+            <img src="../../img/ilta.png" />
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+    </div>
+    <div class="box">
+        floating
+    </div>
+    <section>在这个例子中， section 元素实际上是在 div 之后的（译注：DOM结构上）。然而 div 元素是浮动到左边的，于是 section 中的文字就围绕了 div ，并且 section 元素包围了整个元素。如果我们想让 section 显示在浮动元素之后呢？</section>
+    <div class="box">
+        floating
+    </div>
+    <section class="after-box">使用 clear 我们就可以将这个段落移动到浮动元素 div 下面。你需要用 left 值才能清除元素的向左浮动。你还可以用 right 或 both 来清除向右浮动或同时清除向左向右浮动。</section>
+
+
+
+		<div class="container">
+        
+            <img src="../../img/ilta.png" />
+
+        不......这个图片比包含它的元素还高， 而且它是浮动的，于是它就溢出到了容器外面！
+    </div>
+	
+	<div class="clearboth">
+		clear both to seprate
+	</div>
+	<div class="container">
+    <div class="clearfix">
+        
+            <img src="../../img/ilta.png" />
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima numquam atque cumque, voluptatem quo quasi. Quis voluptatum nisi odit, doloribus praesentium mollitia quia molestiae, obcaecati laboriosam, quasi, quos eaque maxime.
+    </div>
+    </div>
+</body>
+
+</html>

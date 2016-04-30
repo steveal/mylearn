@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>boxmodel</title>
+    <style>
+    .simple1 {
+        width: 500px;
+        margin: 20px auto;
+        border: solid grey 10px;
+    }
+    
+    .fancy1 {
+        width: 500px;
+        margin: 20px auto;
+        padding: 50px;
+        border: solid blue 10px;
+    }
+    
+    .simple2 {
+        width: 500px;
+        margin: 20px auto;
+        border: solid grey 10px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    
+    .fancy2 {
+        width: 500px;
+        margin: 20px auto;
+        padding: 50px;
+        border: solid blue 10px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    </style>
+</head>
+
+<body>
+	<h3>如果不加border-box,则width是指内边距的宽度，如果加了，则是指border内的宽度（包含了内边距和边框宽度）</h1>
+    <div class="simple1">
+        this is simple1 and dfsd fsfsd fsfsf dfsf sfsdfsf fdsfsfds dsfdsfdsf lllllllllllllllllllllllllllllllllllllllllllllll
+    </div>
+    <div class="fancy1">
+        this is fancy1 same width
+    </div>
+    <div class="simple2">
+        this is simple2 and dfsd fsfsd fsfsf dfsf sfsdfsf fdsfsfds dsfdsfdsf lllllllllllllllllllllllllllllllllllllllllllllll
+    </div>
+    <div class="fancy2">
+        this is fancy2 same width
+    </div>
+</body>
+
+</html>
