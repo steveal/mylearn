@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>container-*?</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <style>
+/*    .clearfix {
+    	clear :both;
+    }*/
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>container</h1>
+        <div class="row">
+            <h2>first row</h2>
+            <div class="col-xs-12 col-sm-6" style="background-color : yellow">
+                <strong>col-xs-12 col-sm-6</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, eum.
+            </div>
+            <div class="col-xs-12 col-sm-6" style="background-color : pink">
+                <strong>col-xs-12 col-sm-6</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis nulla iusto fugit hic accusamus adipisci voluptas, dolorum nostrum natus temporibus dolor molestiae velit cum quaerat suscipit, repellat cupiditate, repudiandae sint.
+            </div>
+        </div>
+        <div class="row">
+            <h2>another row</h2>
+            <div class="col-xs-12 col-sm-6" style="background-color : green">
+                <strong>col-xs-12 col-sm-6</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste optio adipisci, aut beatae laboriosam porro nemo, autem ut minus aliquam perferendis itaque qui. Nemo, aperiam?
+            </div>
+            <div class="col-xs-12 col-sm-6" style="background-color : gray">
+                <strong>col-xs-12 col-sm-6</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur reiciendis minus praesentium laboriosam doloremque voluptatum.
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <h1>container-fluid</h1>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6" style="background-color : yellow">
+                <strong>col-xs-12 col-sm-6</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. A?
+            </div>
+            <div class="col-xs-12 col-sm-6" style="background-color : pink">
+                <strong>col-xs-12 col-sm-6</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nesciunt, odio praesentium doloremque.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4" style="background-color : pink">
+                col-sm-4
+            </div>
+            <div class="col-sm-6 col-sm-offset-2" style="background-color : blue;color :white">
+                col-sm-6 col-sm-offset-2
+            </div>
+        </div>
+        <div class="row">
+             <h2>Clear floats (with the .clearfix class) at specific breakpoints to prevent strange wrapping with uneven content:</h2>
+            <div class="col-xs-6 col-sm-3 "  style="background-color:lavender;">
+                Column 1
+                <br> Resize the browser window to see the effect.
+            </div>
+            <div class="col-xs-6 col-sm-3"  style="background-color:lavenderblush;">Column 2</div>
+            <!-- Add clearfix for only the required viewport -->
+            <div class="clearfix visible-xs"></div>
+            <div class="col-xs-6 col-sm-3" style="background-color:lightcyan;">Column 3</div>
+            <div class="col-xs-6 col-sm-3"  style="background-color:lightgray;">Column 4</div>
+        </div>
+    </div>
+</body>
+
+</html>
