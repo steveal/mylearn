@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div">XXXXXXXXXXXXXXXXXXX</div>
+    <div id="div2">XXXXXXXXXXXXXXXXXXX</div>
+    <div id="moveydiv">XXXXXXXXXXXXXXXXXXX</div>
+    <h2 id="title">title</h2>
+    <script>
+    var div = document.getElementById('div');
+    var div2 = document.getElementById('div2');
+    var title = document.getElementById('title');
+    var moveydiv = document.getElementById('moveydiv');
+    div.addEventListener('touchmove', function(event) {
+        // 如果这个元素的位置内只有一个手指的话
+        if (event.targetTouches.length == 1) {　　　　
+            event.preventDefault(); // 阻止浏览器默认事件，重要 
+            // console.log(event.)
+            var touch = event.targetTouches[0];
+            div.innerHTML = "X:" + touch.clientX + "  Y:" + touch.clientY;
+            // 把元素放在手指所在的位置
+            // obj.style.left = touch.pageX-50 + 'px';
+            // obj.style.top = touch.pageY-50 + 'px';
+        }
+    }, false);
+    var moveXStart = 0 ;
+    var moveXEnd = 0;
+    document.addEventListener('touchstart', function(event) {
+        // 如果这个元素的位置内只有一个手指的话
+        console.log("touchstart");
+        moveXStart = event.targetTouches[0].clientX;
+    }, false);
+
+    document.addEventListener('touchend', function(event) {
+        // 如果这个元素的位置内只有一个手指的话
+        console.log("touchend");
+        
+        moveydiv.innerHTML = moveXEnd - moveXStart;
+    }, false);
+
+    document.addEventListener('touchmove', function(event) {
+        // 如果这个元素的位置内只有一个手指的话
+        if (event.targetTouches.length == 1) {　　　　
+            event.preventDefault(); // 阻止浏览器默认事件，重要 
+            // console.log(event.)
+            var touch = event.targetTouches[0];
+            div2.innerHTML = "X:" + touch.clientX + "  Y:" + touch.clientY;
+            // 把元素放在手指所在的位置
+            title.style.left = touch.pageX - 50 + 'px';
+            title.style.top = touch.pageY - 50 + 'px'; 
+            moveXEnd = touch.clientX;
+        }
+    }, false);
+
+    function setName(obj) {
+        obj.name = "ted";
+        obj = new Object();
+        obj.name = "marry";
+    }
+    var obj = new Object();
+    setName(obj);
+    console.log(obj.name);
+    </script>
+</body>
+
+</html>

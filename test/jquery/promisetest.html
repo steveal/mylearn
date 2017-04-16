@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Promist Test</title>
+    <script type="text/javascript" src="../../js/jquery-2.2.2.js"></script>
+</head>
+
+<body>
+	<a href="http://www.ruanyifeng.com/blog/2011/08/a_detailed_explanation_of_jquery_deferred_object.html" target="_blank">jQuery的deferred对象详解</a>
+    <script type="text/javascript">
+    $.ajax({
+            url: 'myjquerytest.html'
+        })
+        .done(function() {
+            console.log("success");
+        })
+        .fail(function() {
+            console.log("error");
+        })
+        .always(function() {
+            console.log("complete");
+        });
+
+    $.ajax({
+        url: 'myjquerytest2.html'
+    }).then(function(data) {
+        console.log(data)
+    }, function(data) {
+        console.log("error then 1: " + JSON.stringify(data));
+    }).then(function(data) {
+        console.log(data)
+    }, function(data) {
+        console.error("error then 2: " + JSON.stringify(data));
+    });
+
+    $.ajax({
+        url: 'myjquerytest.html'
+    }).then(function(data) {
+        console.log("then exec 1");
+    }).then(function(data) {
+        console.log("then exec 2");
+    });
+
+
+    $.when($.ajax("myjquerytest.html"), $.ajax("test2.html")).done(function() {
+        console.log("when exec success");
+    }).fail(function() {
+        console.log("when exec fail");
+    });
+
+
+    　
+    var dtd = $.Deferred(); // 新建一个deferred对象
+    　　
+    var wait = function(dtd) {　　　　
+        var tasks = function() {　　　　　　
+            console.log("执行完毕！");　　　　　　
+           // dtd.resolve(); // 改变deferred对象的执行状态
+  			dtd.reject(); // 改变Deferred对象的执行状态          　　　　
+        };　　　　
+        setTimeout(tasks, 5000);
+        //返回Defferred对象
+        　　　　
+        return dtd;　　
+    };
+
+    $.when(wait(dtd))　　.done(function() {
+        console.log("wait done");
+    })　　.fail(function() {
+        console.log("wait fail");
+    });
+    </script>
+</body>
+
+</html>
